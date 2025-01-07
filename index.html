@@ -12,16 +12,52 @@
             <div class="speaker"></div>
             <div class="camera"></div>
         </div>
-        <div class="screen">
+
+
+        <div class="top-space"></div>
+
+        <div class="screen" id="main-screen">
             <img src="/images/Capsuleopen 1.png" alt="Middenfoto" class="center-image">
-            <button class="time-capsule-button">Make a Time Capsule</button>
+            <button class="time-capsule-button" onclick="showTimeCapsuleScreen()">Making a Time Capsule</button>
             <div class="auth-buttons">
                 <button class="auth-button sign-in">Sign In</button>
                 <button class="auth-button sign-up">Sign Up</button>
             </div>
         </div>
+
+        <!-- Tijdcapsule-scherm (verborgen bij start) -->
+        <div class="screen time-capsule-screen" id="time-capsule-screen" style="display: none;">
+            <p>Choose your favourite photos !</p>
+
+            <div class="photo-grid">
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                <div class="photo-item"></div>
+                
+            </div>
+
+            <div class="button-container">
+                <button class="time-capsule-save">Videos</button>
+                <button class="time-capsule-back">Notes</button>
+            </div>
+        </div>
+
         <div class="phone-bottom">
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

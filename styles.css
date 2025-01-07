@@ -55,6 +55,10 @@ body {
     overflow: auto;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .center-image {
@@ -63,11 +67,11 @@ body {
     object-fit: contain;
     display: block;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 0;
+    margin-bottom: 70px;
 }
 
 .time-capsule-button {
-    margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     font-family: 'Berlin Sans FB', Arial, sans-serif;
@@ -140,3 +144,111 @@ body {
     align-items: center;
 }
 
+.top-space {
+    background-color: #E7FFE3; /* Kleur voor de bovenste lege ruimte */
+    height: 15%; /* Zorgt ervoor dat het 1/5 van het scherm is */
+    width: 100%; /* Zorgt ervoor dat het de volledige breedte heeft */
+}
+
+/* Tijdcapsule scherm stijl */
+.time-capsule-screen {
+    display: none; /* Start verborgen */
+    background: #F8FFF7;
+    color: #939393;
+    padding: 20px;
+    font-family: 'Berlin Sans FB', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 15px;  
+    overflow-y: auto;
+}
+
+.time-capsule-screen p {
+    margin-top: 0; /* Verklein de marge om de tekst hoger te plaatsen */
+    margin-right: 100px;
+    font-size: 17px;
+    margin-bottom: -10px;
+    color: #939393;
+    font-family: 'Berlin Sans FB', Arial, sans-serif;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 70px); /* 3 kolommen van 50px breed */
+    grid-template-rows: repeat(5, 40px); /* 5 rijen van 30px hoog */
+    gap: 30px; /* Ruimte tussen de blokjes */
+    width: 80%; /* Zorg ervoor dat de grid niet te breed is */
+    margin-top: 0; /* Ruimte boven de grid */
+    margin-left: -30px;
+}
+
+.photo-item {
+    background-color: #FFFFFF; /* Witte achtergrond */
+    border-radius: 5%;
+    border: 2px solid #E7E7E7; /* Grijze rand */
+    width: 90px; /* Breedte van 50px */
+    height: 60px; /* Hoogte van 30px */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Zorg ervoor dat de knoppen aan de linker- en rechterkant staan */
+    width: 100%; /* Zorg ervoor dat de container de volledige breedte van het scherm gebruikt */
+    margin-top: 20px;
+}
+
+/* Knoppen voor Tijdcapsule Scherm */
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Berlin Sans FB', Arial, sans-serif;
+    border: 2px solid #E7E7E7;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px; /* Ruimte boven de knoppen */
+}
+
+/* Flexbox voor het naast elkaar plaatsen van de knoppen */
+.time-capsule-screen button {
+    display: inline-block;
+    width: 48%; /* Maak de knoppen smaller dan 50% van de breedte */
+    margin: 5px; /* Ruimte tussen de knoppen */
+}
+
+/* Knop stijl voor "Videos" */
+.time-capsule-save {
+    background-color: #F2FFF0;
+    color: #939393;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Knop stijl voor "Notes" */
+.time-capsule-back {
+    background-color: #F2FFF0;
+    color: #939393;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect voor knoppen */
+button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Zorg ervoor dat het scherm goed wordt aangepast bij kleinere schermen */
+@media (max-width: 768px) {
+    .phone {
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+    }
+
+    .center-image {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
