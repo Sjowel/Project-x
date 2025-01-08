@@ -13,9 +13,9 @@
             <div class="camera"></div>
         </div>
 
-
         <div class="top-space"></div>
 
+        <!-- Hoofdscherm -->
         <div class="screen" id="main-screen">
             <img src="/images/Capsuleopen 1.png" alt="Middenfoto" class="center-image">
             <button class="time-capsule-button" onclick="showTimeCapsuleScreen()">Making a Time Capsule</button>
@@ -25,10 +25,9 @@
             </div>
         </div>
 
-        <!-- Tijdcapsule-scherm (verborgen bij start) -->
+        <!-- Tijdcapsule-scherm (Foto's) -->
         <div class="screen time-capsule-screen" id="time-capsule-screen" style="display: none;">
-            <p>Choose your favourite photos !</p>
-
+            <p>Choose your favourite photos!</p>
             <div class="photo-grid">
                 <div class="photo-item"></div>
                 <div class="photo-item"></div>
@@ -45,17 +44,50 @@
                 <div class="photo-item"></div>
                 <div class="photo-item"></div>
                 <div class="photo-item"></div>
-                
             </div>
-
             <div class="button-container">
-                <button class="time-capsule-save">Videos</button>
-                <button class="time-capsule-back">Notes</button>
+                <button class="time-capsule-save" onclick="showTimeCapsuleNotesScreen()">Notes</button>
+                <button class="time-capsule-save" onclick="showTimeCapsuleVideoScreen()">Videos</button>
             </div>
         </div>
 
-        <div class="phone-bottom">
+        <!-- Tijdcapsule-scherm (Video's) -->
+        <div class="screen time-capsule-screen" id="time-capsule-video-screen" style="display: none;">
+            <p>Choose your favourite videos!</p>
+            <div class="video-grid">
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+                <div class="video-item"></div>
+            </div>
+            <div class="button-container">
+                <button class="time-capsule-save" onclick="showTimeCapsuleScreen()">Photos</button>
+                <button class="time-capsule-save" onclick="showTimeCapsuleNotesScreen()">Notes</button>
+            </div>
         </div>
+
+        <!-- Tijdcapsule-scherm (Notes) -->
+<div class="screen time-capsule-screen" id="time-capsule-notes-screen" style="display: none;">
+    <p>Choose your favourite notes!</p>
+    <div class="notes-grid">
+        <div class="note-item">Note 1</div>
+        <div class="note-item">Note 2</div>
+        <div class="note-item">Note 3</div>
+        <div class="note-item">Note 4</div>
+        <div class="note-item">Note 5</div>
+        <div class="note-item">Note 6</div>
+    </div>
+    <div class="button-container">
+        <button class="time-capsule-save" onclick="showTimeCapsuleScreen()">Photos</button>
+        <button class="time-capsule-save" onclick="showTimeCapsuleVideoScreen()">Videos</button>
+    </div>
+</div>
+
+        <div class="phone-bottom"></div>
     </div>
 
     <script src="script.js"></script>

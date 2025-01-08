@@ -169,7 +169,7 @@ body {
 .time-capsule-screen p {
     margin-top: 0; /* Verklein de marge om de tekst hoger te plaatsen */
     margin-right: 100px;
-    font-size: 17px;
+    font-size: 16.1px;
     margin-bottom: -10px;
     color: #939393;
     font-family: 'Berlin Sans FB', Arial, sans-serif;
@@ -191,8 +191,46 @@ body {
     border: 2px solid #E7E7E7; /* Grijze rand */
     width: 90px; /* Breedte van 50px */
     height: 60px; /* Hoogte van 30px */
+    transition: transform 0.2s ease;
 }
 
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 120px); /* 2 kolommen van 120px breed */
+    grid-template-rows: repeat(4, 70px); /* 4 rijen van 70px hoog */
+    column-gap: 30px; /* Meer ruimte tussen de kolommen */
+    row-gap: 40px; /* Meer ruimte tussen de rijen */
+    width: 80%; /* Zorg ervoor dat de grid niet te breed is */
+    margin-top: 20px; /* Ruimte boven de grid */
+    margin-left: 0; /* Zorg voor consistente uitlijning */
+    justify-content: center; /* Centreer de grid horizontaal */
+    align-items: center; /* Centreer de grid verticaal */
+}
+
+.video-item {
+    background-color: #FFFFFF; /* Witte achtergrond */
+    border-radius: 8%; /* Iets rondere hoeken */
+    border: 2px solid #E7E7E7; /* Grijze rand */
+    width: 120px; /* Grotere breedte */
+    height: 70px; /* Grotere hoogte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Optionele tekstgrootte voor content */
+    transition: transform 0.2s ease; /* Soepele overgang bij interactie */
+}
+
+
+/* Groene rand bij selectie */
+.selected {
+    border: 3px solid #ccffc3;
+}
+
+/* Vergroten van het item wanneer ingedrukt */
+.pressed {
+    transform: scale(1.5); /* Vergroot het item 1.5 keer */
+    z-index: 10; /* Zorg ervoor dat het vergrote item boven andere elementen verschijnt */
+}
 .button-container {
     display: flex;
     justify-content: space-between; /* Zorg ervoor dat de knoppen aan de linker- en rechterkant staan */
@@ -202,7 +240,7 @@ body {
 
 /* Knoppen voor Tijdcapsule Scherm */
 button {
-    padding: 10px 20px;
+    padding: 7px 15px;
     font-size: 14px;
     font-family: 'Berlin Sans FB', Arial, sans-serif;
     border: 2px solid #E7E7E7;
@@ -221,13 +259,6 @@ button {
 
 /* Knop stijl voor "Videos" */
 .time-capsule-save {
-    background-color: #F2FFF0;
-    color: #939393;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Knop stijl voor "Notes" */
-.time-capsule-back {
     background-color: #F2FFF0;
     color: #939393;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
