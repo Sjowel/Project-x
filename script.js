@@ -1,6 +1,6 @@
 // Functie om schermen te tonen of te verbergen
 function showScreen(screenId) {
-    const screens = ['main-screen', 'time-capsule-screen', 'time-capsule-video-screen', 'time-capsule-notes-screen'];
+    const screens = ['main-screen', 'time-capsule-screen', 'time-capsule-video-screen', 'time-capsule-notes-screen', 'time-capsule-name-screen'];
 
     screens.forEach(id => {
         document.getElementById(id).style.display = id === screenId ? 'flex' : 'none';
@@ -22,6 +22,25 @@ function showTimeCapsuleNotesScreen() {
     showScreen('time-capsule-notes-screen');
 }
 
+// Functie om naar het Tijdcapsule Naam-scherm te gaan
+function showTimeCapsuleNameScreen() {
+    showScreen('time-capsule-name-screen');
+}
+
+// Functie om schermen te wisselen bij klikken op de knoppen
+function setupNavigation() {
+    // Event Listener voor de "Name it!" knop (om naar het Naam-scherm te gaan)
+    document.querySelector('.time-capsule-name').addEventListener('click', showTimeCapsuleNameScreen);
+
+    // Event Listener voor de "Photos" knop (om naar het Foto-scherm te gaan)
+    document.querySelector('.time-capsule-save').addEventListener('click', showTimeCapsuleScreen);
+
+    // Event Listener voor de "Videos" knop (om naar het Video-scherm te gaan)
+    document.querySelector('.time-capsule-save').addEventListener('click', showTimeCapsuleVideoScreen);
+
+    // Event Listener voor de "Notes" knop (om naar het Notes-scherm te gaan)
+    document.querySelector('.time-capsule-save').addEventListener('click', showTimeCapsuleNotesScreen);
+}
 
 // Selecteerbare grid-items (zowel foto's, video's als notes)
 function setupSelectableItems(selector) {
@@ -54,14 +73,32 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSelectableItems('.photo-item');
     setupSelectableItems('.video-item');
     setupSelectableItems('.note-item'); // Zorg ervoor dat ook notes-selectie werkt
+
+    // Setup navigatie na het laden van de pagina
+    setupNavigation();
 });
 
-// Event Listener voor de "Photos" knop (om naar het Foto-scherm te gaan)
-document.querySelector('.time-capsule-save').addEventListener('click', showTimeCapsuleScreen);
+// Functie om gegevens op te slaan voor de tijdcapsule (naam, beschrijving, datum)
+function saveTimeCapsule() {
+    const name = document.getElementById("capsule-name").value;
+    const description = document.getElementById("capsule-description").value;
+    const openDate = document.getElementById("capsule-date").value;
 
-// Event Listener voor de "Videos" knop (om naar het Video-scherm te gaan)
-document.querySelector('.time-capsule-save').addEventListener('click', showTimeCapsuleVideoScreen);
+    // Opslaan in console of lokaal (eventueel kan dit naar een server gestuurd worden)
+    console.log("Capsule Name:", name);
+    console.log("Description:", description);
+    console.log("Open Date:", openDate);
 
-// Event Listener voor de "Notes" knop (om naar het Notes-scherm te gaan)
-document.querySelector('.time-capsule-save').addEventListener('click', showTimeCapsuleNotesScreen);
+    // Voor nu, terug naar het oorspronkelijke scherm
+    showTimeCapsuleScreen();
+}
 
+// Functie om de tijdcapsule naar het naam-scherm te verplaatsen
+function showTimeCapsuleNameScreen() {
+    showScreen('time-capsule-name-screen');
+}
+
+// Functie om het time-capsule naam-scherm terug naar foto-scherm te sturen
+function showTimeCapsuleScreen() {
+    showScreen('time-capsule-screen');
+}

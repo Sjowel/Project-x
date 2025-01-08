@@ -168,12 +168,36 @@ body {
 
 .time-capsule-screen p {
     margin-top: 0; /* Verklein de marge om de tekst hoger te plaatsen */
-    margin-right: 100px;
+    margin-right: 10px;
     font-size: 16.1px;
     margin-bottom: -10px;
     color: #939393;
     font-family: 'Berlin Sans FB', Arial, sans-serif;
 }
+
+.title-container {
+    display: flex;
+    align-items: center; /* Verticaal uitlijnen */
+    justify-content: flex-start; /* Zorgt ervoor dat alles aan de linkerzijde uitgelijnd is */
+    white-space: nowrap; /* Voorkomt dat de tekst naar een nieuwe regel gaat */
+}
+
+.time-capsule-name {
+    background: none; /* Verwijdert achtergrondkleur */
+    border: 2px solid #E7E7E7; /* Voegt een rand toe */
+    color: inherit; /* Neemt de tekstkleur over van de omgeving */
+    font: inherit; /* Neemt het lettertype over van de omgeving */
+    cursor: pointer; /* Geeft aan dat het klikbaar is */
+    text-decoration: none; /* Verwijdert onderstreping */
+    padding: 5px 10px; /* Voegt wat padding toe voor de knop */
+}
+
+.time-capsule-name:hover {
+    color: #b8fcab; /* Verandert de kleur van de tekst bij hover */
+    text-decoration: none; /* Verwijdert de onderstreping bij hover */
+}
+
+
 
 .photo-grid {
     display: grid;
@@ -220,6 +244,32 @@ body {
     transition: transform 0.2s ease; /* Soepele overgang bij interactie */
 }
 
+.note-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 120px); /* 2 kolommen van 120px breed */
+    grid-template-rows: repeat(4, 70px); /* 4 rijen van 70px hoog */
+    gap: 20px;
+    width: 80%; /* Zorg ervoor dat de grid niet te breed is */
+    margin-top: 20px; /* Ruimte boven de grid */
+    margin-left: 0; /* Zorg voor consistente uitlijning */
+    justify-content: center; /* Centreer de grid horizontaal */
+    align-items: center; /* Centreer de grid verticaal */
+}
+
+.note-item {
+    background-color: #FFFFFF; /* Witte achtergrond */
+    border-radius: 8%; /* Iets rondere hoeken */
+    border: 2px solid #E7E7E7; /* Grijze rand */
+    width: 250px; /* Grotere breedte */
+    height: 90px; /* Grotere hoogte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Optionele tekstgrootte voor content */
+    transition: transform 0.2s ease; /* Soepele overgang bij interactie */
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 
 /* Groene rand bij selectie */
 .selected {
@@ -282,4 +332,99 @@ button:hover {
         max-width: 80%;
         margin-top: 20px;
     }
+}
+
+/* Tijdcapsule Naam Scherm - Basis stijl */
+.time-capsule-name-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #E7FFE3; /* Achtergrondkleur van het scherm */
+    border-radius: 10px; /* Ronde hoeken voor een zachtere uitstraling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+    width: 100%;
+    max-width: 600px; /* Maximaal formaat voor het formulier */
+    margin: 0 auto;
+}
+
+label {
+    color: #939393;
+}
+
+#open-date {
+    color: #939393;
+}
+
+/* Formulier container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    gap: 20px;
+    margin-left: -30px;
+}
+
+/* Voeg hier het lettertype toe voor de invoervelden */
+.form-container input, 
+.form-container textarea {
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif; /* Lettertype aanpassen naar het gewenste lettertype */
+    border: 2px solid #E7E7E7;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px;
+    color: #939393; /* Grijze tekstkleur */
+}
+
+.form-container input:focus, 
+.form-container textarea:focus {
+    border: 3px solid #b8fcab;
+    outline: none;
+}
+
+/* Zorg ervoor dat het datumveld goed werkt voor zowel klikken als typen */
+.form-container input[type="date"] {
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Berlin Sans FB', Arial, sans-serif; /* Het gewenste lettertype */
+    border: 2px solid #E7E7E7;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px;
+    color: #939393; /* Grijze tekstkleur */
+}
+
+/* Focus stijl voor het datumveld */
+.form-container input[type="date"]:focus {
+    border-color: #b8fcab;
+    outline: none;
+}
+
+
+/* Stijl voor tekstarea */
+.form-container textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Knop */
+.form-container button {
+    padding: 7px 15px;
+    font-size: 14px;
+    font-family: 'Berlin Sans FB', Arial, sans-serif;
+    border: 2px solid #E7E7E7;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px; /* Ruimte boven de knoppen */
+}
+
+.form-container button:hover {
+    background-color: #a0e892;
 }
