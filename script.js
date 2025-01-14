@@ -102,3 +102,6 @@ function showTimeCapsuleNameScreen() {
 function showTimeCapsuleScreen() {
     showScreen('time-capsule-screen');
 }
+
+const today = new Date().toISOString().split('T')[0]; // Haal de datum in "YYYY-MM-DD"-formaat op
+        document.getElementById('open-date').setAttribute('min', today);
