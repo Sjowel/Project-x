@@ -58,10 +58,12 @@ The application simulates a phone interface where users can:
 
 ### File structure
 
+```
 /Images                 # All the images I used on my website
 styles.css              # The stylesheet for the website
 script.js               # The JavaScript for the website                  
 index.html              # Main file for the website
+```
 
 ---
 
