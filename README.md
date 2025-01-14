@@ -58,12 +58,10 @@ The application simulates a phone interface where users can:
 
 ### File structure
 
-time-capsule-project/
-│
-├── index.html         # Main HTML file
-├── styles.css         # CSS file for styling
-├── script.js          # JavaScript file for functionality
-└── images/            # Directory containing images
+/Images                 # All the images I used on my website
+styles.css              # The stylesheet for the website
+script.js               # The JavaScript for the website                  
+index.html              # Main file for the website
 
 ---
 
